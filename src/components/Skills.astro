@@ -1,0 +1,67 @@
+---
+import Card from '../components/Card.astro';
+import CSharpIcon from '../icons/CSharpIcon.astro';
+import NetIcon from '../icons/NetIcon.astro';
+import EFIcon from '../icons/EFIcon.astro';
+import BlazorIcon from '../icons/BlazorIcon.astro';
+import JSIcon from '../icons/JSIcon.astro';
+import HtmlIcon from '../icons/HtmlIcon.astro';
+import CssIcon from '../icons/CssIcon.astro';
+import MySqlIcon from '../icons/MySqlIcon.astro';
+import SqlServerIcon from '../icons/SqlServerIcon.astro';
+import DockerIcon from '../icons/DockerIcon.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import GitIcon from '../icons/GitIcon.astro';
+---
+<div class="skills-grid">
+    <Card title='' style='icon'>
+        <CSharpIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <NetIcon height='47' width='47' />
+    </Card>
+    <Card title='' style='icon'>
+        <EFIcon height='47' width='47' />
+    </Card>
+    <Card title='' style='icon'>
+        <BlazorIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <JSIcon height='47' width='47' />
+    </Card>
+    <Card title='' style='icon'>
+        <HtmlIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <CssIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <MySqlIcon height='48' width='48' />
+    </Card>
+    <Card title='' style='icon'>
+        <SqlServerIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <DockerIcon height='50' width='50' />
+    </Card>
+    <Card title='' style='icon'>
+        <GitHubIcon height='47' width='47' isLink={false}/>
+    </Card>
+    <Card title='' style='icon'>
+        <GitIcon height='47' width='47' />
+    </Card>
+</div>
+
+<style>
+    .skills-grid {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1rem;
+        background-color: var(--bg-secondary);
+        box-shadow: -5px 5px 5px var(--strong-shadow);
+        border-radius: 15px;
+        padding: 1rem;
+    }
+</style>

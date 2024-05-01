@@ -1,0 +1,177 @@
+---
+import { Image } from 'astro:assets';
+import Card from './Card.astro';
+import Skills from './Skills.astro';
+import Stack from './Stack.astro';
+import TimelineElem from './TimelineElem.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import CvIcon from '../icons/CvIcon.astro';
+import Me from '../images/me.webp';
+---
+
+<div class="grid">
+    <Card 
+        title='' 
+        style='me'>
+        <h1 class="me-h1">I'M <span class="text-gradient">EDGAR PINEDO</span></h1>
+        <p class="me-p">FullStack Web Developer</p>
+        <Image src={Me} alt="programmer logo" width="250" height="250" loading='eager'/>
+    </Card>
+    
+    <Card 
+        title="ABOUT ME" 
+        style='about' >
+        <p class="about-me">I'm passionate about developing web applications building clean UI/UX experiences and reliable backend infrastructures.</p>
+    </Card>
+
+    <Card 
+        title='LINKS' 
+        style='links'>
+        <div class="links-wrapper">
+            <a href="https://www.linkedin.com/in/edgar-pinedo-518100201" target="_blank">
+                <LinkedinIcon height='60' width='60' />
+            </a>
+            <a href="https://github.com/EdgarPinedo" target="_blank">
+                <GitHubIcon height='60' width='60' isLink/>
+            </a>
+            <a href="/Edgar's Resume.pdf" target="_blank">
+                <CvIcon height='60' width='60' />
+            </a>
+        </div>
+    </Card>
+
+    <Card 
+        title='SKILLS' 
+        style='skills' >
+        <Skills />
+    </Card>
+
+    <Card 
+        title='STACK' 
+        style='stack'>
+        <Stack />
+    </Card>
+
+    <Card 
+        title='PROJECTS' 
+        style='projects'>
+        <ol>
+            <TimelineElem 
+                title='PreventApp' 
+                date='July 2023' 
+                description='Web application that scrapes and displays recent accidents on a map of Guadalajara.'/>
+            <TimelineElem 
+                title='Men Shop' 
+                date='January 2023' 
+                description="Online men's clothing store that allows you to simulate purchases and display orders."/>
+            <TimelineElem 
+                title='SnapTwit' 
+                date='September 2022' 
+                description='Social app that allows you to upload posts, comment on them, like them and follow/search other users.'/>
+            <TimelineElem 
+                title='iMovies' 
+                date='March 2022' 
+                description='Movie application that shows details, allows searches and filters. Connects to an api.'/>
+        </ol>
+    </Card>
+</div>
+
+<style>
+    .grid {
+        width: 100%;
+        height: 800px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    h1 {
+		font-size: 3.5rem;
+		line-height: 1;
+		margin: 0;
+        letter-spacing: .2rem;
+        font-family: 'eurostile';
+        text-align: center;
+        background-image: var(--accent-gradient-2);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+    p {
+        margin: 0;
+    }
+	.me-p {
+		font-size: 1.5rem;
+        font-weight: 500;
+		margin: 1.5rem 0 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+    .links-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        height: 100%;
+    }
+    a {
+        display: flex;
+        padding: .7rem;
+        border-radius: 15px;
+        background-color: var(--bg-secondary);
+		box-shadow: -5px 5px 5px var(--strong-shadow);
+    }
+    a:hover {
+        opacity: 0.8;
+    }
+    ol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+    .about-me {
+        font-size: 0.98rem;
+        text-align: center;
+    }
+    @media (width < 1360px) {
+		.grid {
+            height: 950px;
+			grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 16%) 1fr 1fr;
+		}
+	}
+    @media (width < 1035px) {
+		.grid {
+            height: auto;
+			grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            max-width: 600px;
+		}
+	}
+    @media (width < 600px) {
+		h1 {
+			font-size: 3rem;
+		}
+        .me-p {
+            font-size: 1rem;
+        }
+        .links-wrapper {
+            gap: .5rem;
+        }
+        .links-wrapper a {
+            padding: 0.5rem;
+        }
+	}
+</style>

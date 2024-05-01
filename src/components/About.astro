@@ -1,0 +1,134 @@
+---
+import { Image } from 'astro:assets';
+import Udg from '../images/udg.png';
+---
+
+<div class="grid">
+    <div class="wrapper">
+        <h1>EDUCATION</h1>
+        <Image src={Udg} alt="udg logo" width="200" height="280" loading='lazy' />
+        <span class="title mt-1">University of Guadalajara (CUCEI)</span>
+        <span class="gray-text">Bachelor's in Computer Engineering</span>
+    </div>
+    <div class="wrapper">
+        <h1>INTERESTS</h1>
+        <span class="title">Web development</span>
+        <p class="gray-text">
+            I am passionate about developing web applications where I can create a good user experience and provide solutions to different problems. 
+        </p>
+        <span class="title">Frontend/Backend</span>
+        <p class="gray-text">
+            I like to build clean UI/UX experiences and reliable backend infrastructures that can work together reliably and securely.
+        </p>
+        <span class="title">New Challenges</span>
+        <p class="gray-text">
+            I love learning new things and experimenting with new technologies and programming languages.
+        </p>
+    </div>
+    <div class="wrapper">
+        <h1>CONTACT ME</h1>
+        <form id="contact-form">
+            <label for="user_name">Name</label>
+            <input type="text" id="user_name" name="from_name" required/>
+            <label for="user_email">Email</label>
+            <input type="email" id="user_email" name="from_email" required/>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required/>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 4rem 0;
+        width: 100%;
+    }
+    .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        background-color: var(--bg-primary);
+        border-radius: 15px;
+        text-align: center;
+    }
+    h1 {
+        margin: 0 0 1.5rem;
+        font-size: 2.2rem;
+		letter-spacing: .2rem;
+		font-family: 'eurostile';
+		background-image: var(--accent-gradient-2);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+    }
+    .title {
+        font-weight: 600;
+        margin: .5rem 0 .2rem;
+    }
+    .mt-1 {
+        margin-top: 1.5rem;
+    }
+    .gray-text {
+        color: var(--accent-secondary);
+    }
+    p {
+        margin-top: 0;
+    }
+    form {
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: -5px 5px 5px var(--strong-shadow);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    label {
+        text-align: left;
+        margin-bottom: .2rem;
+    }
+    input,
+    textarea {
+        margin-bottom: 1rem;
+        background-color: inherit;
+        border-radius: 10px;
+        border: 1px solid var(--accent-tertiary);
+        color: var(--accent-primary);
+        padding: .5rem;
+    }
+    textarea {
+        resize: none;
+        height: 4.2rem;
+    }
+    button {
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+		padding: .5rem 1rem;
+		background-color: var(--bg-secondary);
+		color: #368dff;
+		border-radius: 15px;
+        border: 1px solid var(--accent-tertiary);
+        box-shadow: -5px 5px 5px var(--weak-shadow);
+		font-size: 0.9rem;
+		font-weight: 500;
+		cursor: pointer;
+    }
+    button:hover {
+		background-color: var(--bg-primary);
+	}
+    @media (width < 1035px) {
+		.grid {
+            grid-template-columns: 1fr;
+            width: min(600px, 100%);
+            margin: 0 0 2rem;
+        }
+	}
+</style>

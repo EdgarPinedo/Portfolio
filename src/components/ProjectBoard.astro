@@ -1,0 +1,133 @@
+---
+import preventapp from "../images/preventapp.png";
+import snaptwit from "../images/snaptwit.png";
+import imovies from "../images/imovies.png";
+import mshop from "../images/mshop.png";
+import Project from "./Project.astro";
+---
+
+<div class="wrapper">
+    <div class="container">
+        <div class="head">
+            <h1>MY WORK</h1>
+            <a href="https://github.com/EdgarPinedo">More projects...</a>
+        </div>
+        <div class="projects-grid">
+            <Project 
+                src={preventapp} 
+                height={250} 
+                width={824} 
+                title="PreventApp"
+                webLink="https://preventapp-6gzhluj7oa-uc.a.run.app/"
+                githubLink="https://github.com/EdgarPinedo/PreventApp"
+                tags={["C#", ".Net", "MVC", "Entity Framework", "Javascript", "Leaflet JS", "HTML", "CSS"]}
+                order="first" />
+            <Project 
+                src={snaptwit} 
+                height={250} 
+                width={552}
+                title="Snaptwit"
+                webLink="https://snaptwit-omrkgb3ouq-uc.a.run.app/"
+                githubLink="https://github.com/EdgarPinedo/SnapTwit"
+                tags={["C#", ".Net", "Blazor WA", "Entity Framework", "Javascript", "HTML", "CSS"]} />
+            <Project 
+                src={imovies} 
+                height={250} 
+                width={552} 
+                title="iMovies"
+                webLink="https://imovies-53y53ufk5q-uc.a.run.app/"
+                githubLink="https://github.com/EdgarPinedo/iMovies"
+                tags={["C#", ".Net", "Blazor Server", "TMDB Api", "Javascript", "HTML", "CSS"]} />
+            <Project 
+                src={mshop} 
+                height={250} 
+                width={824} 
+                title="Men Shop" 
+                webLink="https://men-shop-bxvgui2twa-uc.a.run.app/"
+                githubLink="https://github.com/EdgarPinedo/MenShop"
+                tags={["C#", ".Net", "MVC", "Entity Framework", "Javascript", "HTML", "CSS"]}
+                order="fourth" />
+        </div>
+    </div>
+</div>
+
+<style>
+    .wrapper {
+        background-color: var(--bg-primary);
+        width: 100%;
+        border-radius: 15px;
+        padding: 4rem 1.5rem;
+        box-sizing: border-box;
+    }
+    .container {
+        width: min(1244px, 100%);
+        margin: auto;
+    }
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+    h1 {
+        font-family: 'eurostile';
+        font-weight: 600;
+        font-size: 2.2rem;
+        margin: 0;
+        line-height: 2.2rem;
+        letter-spacing: .2rem;
+        position: relative;
+        background-image: var(--accent-gradient-2);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+    }
+    h1::after {
+        content: "";
+        position: absolute;
+        bottom: -.3rem;
+        left: 10%;
+        width: 80%;
+        height: 3px;
+        background-color: var(--accent-secondary);
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    a {
+		padding: .5rem 1rem;
+		background-color: var(--bg-secondary);
+		border: 1px solid var(--bg-tertiary);
+		color: #368dff;
+		border-radius: 15px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		box-shadow: -5px 5px 5px var(--strong-shadow);
+        text-decoration: none;
+		cursor: pointer;
+	}
+	a:hover {
+		background-color: var(--bg-primary);
+	}
+    @media (width < 1035px) {
+        .wrapper {
+            padding: 2rem 1.5rem;
+            max-width: 600px;
+        }
+		.projects-grid {
+            grid-template-columns: 1fr;
+		}
+        a {
+            display: none;
+        }
+        h1 {
+            margin: auto;
+        }
+	}
+    @media (width < 600px) {
+		.wrapper {
+            padding: 2rem 1rem;
+        }
+	}
+</style>

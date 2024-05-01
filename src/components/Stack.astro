@@ -1,0 +1,90 @@
+---
+import VsCodeIcon from '../icons/VsCodeIcon.astro';
+import VsIcon from '../icons/VsIcon.astro';
+import PostmanIcon from '../icons/PostmanIcon.astro';
+import TerminalIcon from '../icons/TerminalIcon.astro';
+import GitIcon from '../icons/GitIcon.astro';
+import DockerIcon from '../icons/DockerIcon.astro';
+---
+
+<div class="stack">
+    <div class="icon">
+        <VsCodeIcon height='60' width='60' />
+    </div>
+    <div class="icon">
+        <VsIcon height='60' width='60' />
+    </div>
+    <div class="icon">
+        <PostmanIcon height='60' width='60' />
+    </div>
+    <div class="icon">
+        <GitIcon height='60' width='60' />
+    </div>
+    <div class="icon">
+        <DockerIcon height='60' width='60' />
+    </div>
+    <div class="icon">
+        <TerminalIcon height='60' width='60' />
+    </div>
+</div>
+
+<style>
+    .stack {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 0;
+        gap: 1rem;
+        padding: 1rem;
+        margin-right: -1rem;
+        border-radius: 20px 0 0 20px;
+        background-color: var(--bg-secondary);
+        box-shadow: -5px 5px 5px var(--strong-shadow);
+    }
+    .stack::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 150px;
+        height: 104%;
+        background: linear-gradient(to left, var(--bg-primary), rgb(0,0,0, 0));
+    }
+    .icon {
+        display: flex;
+        padding: .5rem;
+        border-radius: 15px;
+        align-items: center;
+        background-color: var(--bg-tertiary);
+        box-shadow: -5px 5px 5px var(--weak-shadow);
+    }
+    @media (width < 1035px) {
+		.stack {
+            padding: .7rem;
+            margin-right: -.7rem;
+        }
+        .icon {
+            height: 40px;
+            width: 40px;
+        }
+	}
+    @media (width < 505px)
+    {
+        .stack {
+            gap: .3rem;
+            padding: .5rem;
+        }
+        .icon {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    @media (width < 400px)
+    {
+        .icon {
+            height: 20px;
+            width: 20px;
+        }
+    }
+</style>

@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Bento from '../components/Bento.astro';
+import ProjectBoard from '../components/ProjectBoard.astro';
+import About from '../components/About.astro';
+---
+
+<Layout title="Edgar's portfolio">
+	<main>
+		<section class="full-h wrapper-lg">
+			<Bento />
+		</section>
+		<section class="p-4 wrapper-lg">
+			<ProjectBoard />
+		</section>
+		<section class="wrapper-lg">
+			<About />
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding: 1rem;
+		color: var(--accent-primary);
+		line-height: 1.6;
+	}
+	section {
+		display: flex;
+		justify-content: center;
+		margin: auto;
+	}
+	.full-h {
+		min-height: calc(100dvh - 4rem);
+		align-items: center;
+	}
+	.wrapper-lg {
+		width: min(1500px, 100%);
+	}
+	.p-4 {
+		padding: 4rem 0;
+	}
+	@media (width < 600px) {
+		main {
+			padding: .5rem;
+		}
+	}
+</style>

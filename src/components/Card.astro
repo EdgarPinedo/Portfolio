@@ -1,0 +1,111 @@
+---
+interface Props {
+	title: string;
+	style: string;
+}
+
+const { title, style } = Astro.props;
+---
+
+<div class=`card ${style}`>
+	{title.length > 0 &&
+		<h2>
+			{title}
+		</h2>
+	}
+	<slot />
+</div>
+
+<style>
+	.card {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		padding: 1.5rem;
+		background-color: var(--bg-primary);
+		border-radius: 15px;
+	}
+	h2 {
+		margin: 0 0 .5rem;
+		font-size: 2.2rem;
+		text-align: center;
+		letter-spacing: .2rem;
+		font-family: 'eurostile';
+		background-image: var(--accent-gradient-2);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.me {
+		justify-content: center;
+		align-items: center;
+		grid-row: 1 / 4;
+		grid-column: 1 / 3;
+	}
+	.about {
+		grid-column: 1;
+	}
+	.skills {
+		grid-row: 1 / 4;
+		grid-column: 3;
+	}
+	.stack {
+		grid-row: 4;
+		grid-column: 2 / 4;
+	}
+	.stack h2 {
+		margin-bottom: 0;
+		text-align: left;
+	}
+	.links {
+		grid-row: 1;
+		grid-column: 4;
+	}
+	.projects {
+		grid-row: 2 / 5;
+		grid-column: 4;
+	}
+	.icon {
+		justify-content: center;
+        align-items: center;
+		padding: .5rem;
+		background-color: var(--bg-tertiary);
+        box-shadow: -5px 5px 5px var(--weak-shadow);
+	}
+	@media (width < 1360px) {
+		.about {
+			grid-row: 4;
+			grid-column: 1;
+		}
+		.links {
+			grid-row: 4;
+			grid-column: 2;
+		}
+		.stack {
+			grid-row: 5;
+			grid-column: 1 / 3;
+		}
+		.projects {
+			grid-row: 4 / 6;
+			grid-column: 3;
+		}
+	}
+	@media (width < 1035px) {
+		.me,
+		.about,
+		.skills,
+		.stack,
+		.links,
+		.projects,
+		.contact {
+			grid-row: auto;
+			grid-column: auto;
+		}
+	}
+	@media (width < 600px) {
+		.card {
+			padding: 1.5rem 1rem;
+		}
+		.icon {
+			padding: .3rem;
+		}
+</style>

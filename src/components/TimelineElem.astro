@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+	date: string;
+    description: string;
+}
+
+const { title, date, description } = Astro.props;
+---
+
+<li class="wrapper">
+    <svg width="10" height="10" fill="currentColor" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>
+    <span class="title">{title}</span>
+    <span class="date">{date}</span>
+    <p>{description}</p>
+</li>
+
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--accent-tertiary);
+        color: var(--accent-secondary);
+        position: relative;
+        padding: 0 .5rem 1.3rem;
+        width: 279.2px;
+    }
+    .wrapper:last-of-type {
+        padding: 0 .5rem .4rem;
+    }
+    svg {
+        position: absolute;
+        left: -.34rem;
+        top: .5rem;
+        color: var(--accent-tertiary);
+    }
+    .title {
+        font-weight: 500;
+        color: var(--accent-primary);
+    }
+    .date {
+        font-size: .7rem;
+    }
+    p {
+        margin: .6rem 0 0;
+        font-size: .8rem;
+    }
+    @media (width < 1360px) {
+		.wrapper {
+            width: auto;
+        }
+        li:last-of-type {
+            display: none;
+        }
+        .wrapper:nth-of-type(3) {
+            padding: 0 .5rem .4rem;
+        }
+        p {
+            max-height: 40.9667px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-wrap: break-word;
+        }
+	}
+    @media (width < 1035px) {
+		.wrapper:nth-of-type(3) {
+            padding: 0 .5rem 1.3rem;
+        }
+        li:last-of-type {
+            display: inherit;
+        }
+	}
+</style>
